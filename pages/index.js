@@ -35,7 +35,7 @@ export default function Home() {
       
       // Access the API accordingly and extract the search query
       //Set maximum search results to be 3
-      axios.get('https://www.googleapis.com/books/v1/volumes?q=' + searchText + '&key=AIzaSyCarM77qxYExovNaJpaebZhG6RXdZV6A8Y' + '&maxResults=3')
+      axios.get('https://www.googleapis.com/books/v1/volumes?q=' + searchText + '&key=PROCESS.ENV.GOOGLEAPI_KEY' + '&maxResults=3')
       .then(res => 
         setBookInformation(res.data.items))
       .catch(err => 
